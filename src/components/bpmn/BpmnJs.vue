@@ -78,10 +78,12 @@ export default {
     // 绘制
     createNewDiagram (bpmnXmlStr) {
       // 将字符串转换成图显示出来
-      this.bpmnModeler.importXML(bpmnXmlStr, function (err) {
+      this.bpmnModeler.importXML(bpmnXmlStr, err => {
         if (err) {
-          this.$Message.error('打开模型出错,请确认该模型符合Bpmn2.0规范')
+          this.$message.error('打开模型出错,请确认该模型符合Bpmn2.0规范')
+          return
         }
+        this.bpmnModeler.get('canvas').zoom('fit-viewport')
       })
     },
     // 导入一个bpmn文件
