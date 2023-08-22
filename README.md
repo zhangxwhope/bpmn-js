@@ -1,4 +1,4 @@
-# vue-bpmn
+# bpmn-js
 
 ## Project setup
 ```
